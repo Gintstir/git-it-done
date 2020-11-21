@@ -84,10 +84,11 @@ var displayRepos = function(repos, searchTerm) {
         //format repo name (.owner refers to repo owner, name refers to repo name)
         var repoName = repos[i].owner.login + "/" + repos[i].name;
 
-        //create a container for each repo so it appears on the page in a new div
-        var repoEl = document.createElement("div");
+        //create a container for each repo so it appears on the page in a new <a>
+        var repoEl = document.createElement("a");//turns the repo into <a> elements
         // assign css classes to newly created div
         repoEl.classList = "list-item flex-row justify-space-between align-center";
+        repoEl.setAttribute("href", "./single-repo.html?repo=" + repoName);//gives the newly create <a> element an href that links to single-repo.html
 
         //create a span element to hold repo name
         var titleEl = document.createElement("span");
